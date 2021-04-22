@@ -17,4 +17,4 @@ export function useSession<R extends boolean = false>(params?: {
   redirectTo?: string
   /** Configuration for `useQuery` */
   queryConfig?: UseQueryOptions<Session | null>
-}): [R extends true ? Session : Session | null, boolean]
+}): [R extends true ? Session : Session | null | undefined, boolean]
