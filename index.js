@@ -4,10 +4,7 @@ import { useRouter } from "next/router"
 async function fetchSession() {
   const res = await fetch("/api/auth/session")
   const session = await res.json()
-  if (Object.keys(session).length) {
-    return session
-  }
-  return null
+  return Object.keys(session).length > 0 ? session : null
 }
 
 export function useSession({
